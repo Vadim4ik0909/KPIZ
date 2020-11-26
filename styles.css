@@ -1,0 +1,157 @@
+.flexed {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body {
+  flex-direction: column;
+  width: 100%; height: 100vh;
+  margin: 0;
+  font-family: Arial;
+}
+
+section.top {
+  width: 100%;
+  height: 90%;
+}
+section.top .list {
+  height: 100%; width: 25%;
+  background: #F7C9BA;
+  flex-direction: column;
+  justify-content: start;
+}
+section.top .list .employee {
+  justify-content: space-between;
+  font: 700 1.2em Arial;
+  width: 80%;
+  padding: 4px 10px;
+  margin: 6px 0px;
+  background: #f1c3b4;
+  cursor: pointer;
+}
+section.top .list .employee span {
+  pointer-events: none;
+}
+section.top .list .employee:first-child {
+  margin-top: 20px;
+}
+section.top .list .employee.visible {
+  background: #F7C9BA;
+  color: rgb(255, 255, 255);
+}
+section.top .list .employee .option {
+  font-size: 1.2em;
+  visibility: hidden;
+  position: relative;
+}
+section.top .list .employee .option:before {
+  content: "";
+  position: absolute;
+  width: 30px; height: 30px;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+}
+section.top .list .employee .option:hover:before {
+  background: rgba(255,255,255,0.2);
+}
+section.top .list .employee .edit {
+  margin: 0px 10px;
+}
+section.top .list .employee:hover .option {
+  visibility: visible;
+}
+section.top #card {
+  height: 100%; width: 75%;
+  justify-content: start;
+  font: 30px Arial;
+  visibility: hidden;
+}
+section.top #card.visible {
+  visibility: visible;
+}
+section.top #card #employeeImg {
+  margin: 0px 30px;
+}
+section.top #card .p {
+  background: #F7C9BA;
+}
+section.top #card td {
+  padding: 6px 18px;
+}
+
+section.bottom {
+  width: 100%;
+  height: 10%;
+  background: #F7C9BA;
+}
+section.bottom #add {
+  width: 120px; height: 60px;
+  border-radius: 20px;
+  background: #fc9a9a;
+  color: rgb(255, 255, 255);
+  font: 900 2em Arial;
+  cursor: pointer;
+  box-shadow: 4px 4px 8px -6px rgba(0,0,0,0.75);
+}
+section.bottom #add:active {
+  transform: scale(0.8);
+}
+
+#overflow {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  display: none;
+}
+#overflow.visible {
+  display: flex;
+}
+#overflow #overflowDark {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.5);
+  z-index: 0;
+}
+#overflow .in-overflow { 
+  padding: 40px;
+  background: #F7C9BA;
+  z-index: 1;
+  border-radius: 10px;
+}
+
+#overflow .inputs input {
+  margin: 6px 0px;
+  border: none;
+  padding: 6px 18px;
+  font-size: 1.2em;
+  width: 320px;
+}
+#overflow .inputs .small input {
+  width: 120px;
+}
+
+#overflow #photoInput {
+  width: 0.1px; height: 0.1px;
+  opacity: 0;
+}
+#overflow #photo {
+  margin-right: 30px;
+}
+
+#overflow #submit {
+  padding: 10px 25px;
+  font-size: 1.2em;
+  border: none;
+  background: #fc9a9a;
+  color: white;
+  margin-top: 6px;
+  border-radius: 60px;
+}
+
+#overflow h2 {
+  width: 100%;
+  margin-top: 0;
+  text-align: center;
+}
